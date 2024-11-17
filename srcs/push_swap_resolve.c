@@ -6,7 +6,7 @@
 /*   By: benpicar <benpicar@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:25:34 by benpicar          #+#    #+#             */
-/*   Updated: 2024/11/16 14:37:58 by benpicar         ###   ########.fr       */
+/*   Updated: 2024/11/16 16:52:12 by benpicar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,14 @@ void	ft_ps_resolve(t_pile *var)
 		ft_pb(var);
 	}
 	ft_sort_3(var);
+	ft_put_higher_top(var);
 	while (var->len_b > 0)
 	{
-		while (var->a[var->len_a - 1] > var->b[0])
-			ft_rra(var, true);
+		if (var->max_a > var->max_b && var->min_a < var->b[0])
+			while (var->a[var->len_a - 1] > var->b[0])
+				ft_rra(var, true);
+		else if (var->min_a > var->min_b)
+			ft_put_lower_top(var);
 		ft_pa(var);
 	}
 	if (var->len_a > 6)
@@ -67,12 +71,10 @@ void	ft_sort_in_b(t_pile *var, int value)
 		return ;
 	if (value > var->max_b || value < var->min_b)
 	{
-		ft_put_higher_top(var->b, var->max_b, var->len_b, var);
-		ft_pb(var);
+		ft_put_higher_top(var);
 	}
 	else
 	{
 		ft_put_pos(var, value);
-		ft_pb(var);
 	}
 }

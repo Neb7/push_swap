@@ -6,7 +6,7 @@
 /*   By: benpicar <benpicar@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:19:46 by benpicar          #+#    #+#             */
-/*   Updated: 2024/11/16 14:14:17 by benpicar         ###   ########.fr       */
+/*   Updated: 2024/11/16 16:52:28 by benpicar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,9 @@ void	ft_sort_in_b(t_pile *var, int value);
 
 /*push_swap_utils*/
 
-void	ft_put_higher_top(int *tab, int max, int size, t_pile *var);
+void	ft_put_higher_top(t_pile *var);
 void	ft_put_pos(t_pile *var, int value);
+void	ft_put_lower_top(t_pile *var);
 
 void	ft_test(void);
 bool	ft_is_sorted(t_pile *var);

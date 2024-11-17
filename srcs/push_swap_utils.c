@@ -6,7 +6,7 @@
 /*   By: benpicar <benpicar@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:35:07 by benpicar          #+#    #+#             */
-/*   Updated: 2024/11/15 17:09:11 by benpicar         ###   ########.fr       */
+/*   Updated: 2024/11/16 17:20:55 by benpicar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 #include "libft.h"
 #include "ft_printf.h"
 
-void	ft_put_higher_top(int *tab, int max, int size, t_pile *var)
+void	ft_put_higher_top(t_pile *var)
 {
 	int	i;
 
 	i = 0;
-	while (tab[i] != max)
+	while (var->b[i] != var->max_b)
 		i++;
-	if (i > size / 2)
-		while (tab[0] != max)
+	if (i > var->len_b / 2)
+		while (var->b[0] != var->max_b)
 			ft_rrb(var, true);
 	else
-		while (tab[0] != max)
+		while (var->b[0] != var->max_b)
 			ft_rb(var, true);
 }
 
@@ -36,7 +36,7 @@ void	ft_put_pos(t_pile *var, int value)
 	i = 0;
 	if (value < var->b[var->len_b - 1] && value > var->b[0])
 		return ;
-	while (!(var->b[i] > value > var->b[i + 1]))
+	while (i < var->len_b - 1 && !(var->b[i] > value && value > var->b[i + 1]))
 		i++;
 	if (i + 1 > var->len_b / 2)
 		while (++i < var->len_b)
@@ -44,4 +44,23 @@ void	ft_put_pos(t_pile *var, int value)
 	else
 		while (i-- >= 0)
 			ft_rb(var, true);
+}
+
+void	ft_put_lower_top(t_pile *var)
+{
+	int	i;
+
+	i = 0;
+	while (var->a[i] != var->min_a)
+		i++;
+	if (i > var->len_a / 2)
+	{
+		while (var->a[0] != var->min_a)
+		{
+			ft_rra(var, true);
+		}
+	}
+	else
+		while (var->a[0] != var->min_a)
+			ft_ra(var, true);
 }
