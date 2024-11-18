@@ -6,7 +6,7 @@
 /*   By: benpicar <benpicar@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:43:18 by benpicar          #+#    #+#             */
-/*   Updated: 2024/11/15 16:31:05 by benpicar         ###   ########.fr       */
+/*   Updated: 2024/11/18 16:53:09 by benpicar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,15 @@ void	ft_sb(t_pile *var, bool w)
 		write(1, "sb\n", 3);
 }
 
-void	ft_ss(t_pile *var)
+void	ft_ss(t_pile *var, bool w)
 {
 	ft_sa(var, false);
 	ft_sb(var, false);
-	write(1, "ss\n", 3);
+	if (w)
+		write(1, "ss\n", 3);
 }
 
-void	ft_pa(t_pile *var)
+void	ft_pa(t_pile *var, bool w)
 {
 	int	i;
 
@@ -66,10 +67,11 @@ void	ft_pa(t_pile *var)
 	var->min_a = ft_find_lower(var->a, var->len_a);
 	var->max_b = ft_find_higher(var->b, var->len_b);
 	var->min_b = ft_find_lower(var->b, var->len_b);
-	write(1, "pa\n", 3);
+	if (w)
+		write(1, "pa\n", 3);
 }
 
-void	ft_pb(t_pile *var)
+void	ft_pb(t_pile *var, bool w)
 {
 	int	i;
 
@@ -88,5 +90,6 @@ void	ft_pb(t_pile *var)
 	var->min_a = ft_find_lower(var->a, var->len_a);
 	var->max_b = ft_find_higher(var->b, var->len_b);
 	var->min_b = ft_find_lower(var->b, var->len_b);
-	write(1, "pb\n", 3);
+	if (w)
+		write(1, "pb\n", 3);
 }

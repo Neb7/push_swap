@@ -6,7 +6,7 @@
 /*   By: benpicar <benpicar@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:43:24 by benpicar          #+#    #+#             */
-/*   Updated: 2024/11/16 17:21:18 by benpicar         ###   ########.fr       */
+/*   Updated: 2024/11/18 16:53:51 by benpicar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,12 @@ void	ft_rb(t_pile *var, bool w)
 		write(1, "rb\n", 3);
 }
 
-void	ft_rr(t_pile *var)
+void	ft_rr(t_pile *var, bool w)
 {
 	ft_ra(var, false);
 	ft_rb(var, false);
-	write(1, "rr\n", 3);
+	if (w)
+		write(1, "rr\n", 3);
 }
 
 void	ft_rra(t_pile *var, bool w)

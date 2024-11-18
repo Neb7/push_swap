@@ -1,14 +1,16 @@
 LIBFT		= libft/
 
-SRC			= test.c \
-			  main.c \
+SRC			= push_swap_short_sort.c \
 			  push_swap_error.c \
 			  push_swap_init.c \
 			  push_swap_is.c \
 			  push_swap_op.c \
 			  push_swap_op2.c \
 			  push_swap_resolve.c \
-			  push_swap_utils.c
+			  push_swap_utils.c \
+			  push_swap_calcul.c \
+			  push_swap_calcul_utils.c
+MAIN		= srcs/main.c
 
 SRCS_DIR 	= srcs/
 SRCS		= $(addprefix ${SRCS_DIR}, ${SRC})
@@ -16,10 +18,18 @@ SRCS		= $(addprefix ${SRCS_DIR}, ${SRC})
 OBJS_DIR	= objects/
 OBJS		= $(addprefix ${OBJS_DIR}, ${SRC:.c=.o})
 
+
+SRC_BONUS	= checker.c \
+			  checker_error.c
+
+SRCS_BONUS	= $(addprefix ${SRCS_DIR}, ${SRC_BONUS})
+OBJS_BONUS	= $(addprefix ${OBJS_DIR}, ${SRC_BONUS:.c=.o})
+BONUS		= checker
+
 INCLUDES	= includes
 NAME		= push_swap
 RM			= rm -f
-CFLAGS		= -Wall -Wextra -Werror -I ${INCLUDES} -g
+CFLAGS		= -Wall -Wextra -Werror -I ${INCLUDES}
 
 #Colors
 GRAY		= \033[0;90m
@@ -38,26 +48,32 @@ ${OBJS_DIR}%.o: ${SRCS_DIR}%.c | ${OBJS_DIR}
 				@cc ${CFLAGS} -c $< -o $@
 
 ${NAME}:		${OBJS}
-				@make -C ${LIBFT}
-				@cp ${LIBFT}libft.a .
-				@${CC} ${CFLAGS} ${OBJS} -L${LIBFT} -lft -o $@ 
-				@echo "${YELLOW}'${NAME}' is compiled !${RESET}"
+				@echo "${BLUE}'libft.a' is compiling... 🔥 (if needed)${RESET}"
+				@make -sC ${LIBFT}
+				@${CC} ${CFLAGS} ${OBJS} -L${LIBFT} ${MAIN} -lft -o $@ 
+				@echo "${YELLOW}'$@' is compiled ! ✅${RESET}"
 
 ${OBJS_DIR}:
 				@mkdir -p ${OBJS_DIR}
 
+bonus:			${BONUS}
+
+${BONUS}:		${OBJS_BONUS} ${OBJS}
+				@echo "${BLUE}'libft.a' is compiling... 🔥 *(if needed)*${RESET}"
+				@make -sC ${LIBFT}
+				@${CC} ${CFLAGS} ${OBJS_BONUS} ${OBJS} -L${LIBFT} -lft -o $@ 
+				@echo "${CYAN}'$@' is compiled ! ✅${RESET}"
+
 clean:
-				@${RM} ${OBJS}
+				@${RM} ${OBJS} ${OBJS_BONUS}
 				@${RM} -r ${OBJS_DIR}
-				@make clean -C ${LIBFT}
-				@echo "${RED}'${NAME}' objects are deleted !${RESET}"
+				@make clean -sC ${LIBFT}
+				@echo "${RED}'${NAME}' objects are deleted ! 👍${RESET}"
 
 fclean:			clean
-				@${RM} ${NAME}
-				@${RM} ${LIBFT}libft.a
-				@echo "${RED}'libft.a' is deleted !${RESET}"
-				@echo "${RED}'${NAME}' is deleted !${RESET}"
+				@${RM} ${NAME} ${LIBFT}libft.a ${BONUS}
+				@echo "${RED}'${NAME}', '${BONUS}' and 'libft.a' are deleted ! 👍${RESET}"
 
 re:				fclean all
 
-.PHONY:			all clean fclean re
+.PHONY:			all clean fclean re bonus

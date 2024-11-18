@@ -6,7 +6,7 @@
 /*   By: benpicar <benpicar@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 17:45:01 by benpicar          #+#    #+#             */
-/*   Updated: 2024/11/12 14:24:27 by benpicar         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:47:23 by benpicar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-//# include <stdbool.h>
-//#include <stdio.h> // for test
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 1024
 # endif
 
 /*Get_next_line*/

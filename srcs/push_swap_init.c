@@ -6,7 +6,7 @@
 /*   By: benpicar <benpicar@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:39:24 by benpicar          #+#    #+#             */
-/*   Updated: 2024/11/16 14:27:39 by benpicar         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:03:30 by benpicar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,15 @@
 #include "libft.h"
 #include "ft_printf.h"
 
+static int	ft_ps_len_av(int ac, char **av, int count, t_index idx);
+
 void	ft_ps_alloc_var(t_pile *var, int ac, char **av)
 {
-	var->len_a = ft_ps_len_av(ac, av, 0, 0);
+	t_index	idx;
+
+	idx.i = 0;
+	idx.in = 0;
+	var->len_a = ft_ps_len_av(ac, av, 0, idx);
 	var->len_b = 0;
 	var->a = (int *)malloc(sizeof(int) * var->len_a);
 	if (!var->a)
@@ -68,10 +74,10 @@ int	ft_ps_atoi(char *str, int *j, t_pile *var)
 	}
 	while (str[*j] != '\0' && str[*j] != ' ')
 	{
-		if (y > INT_MAX / 10 || y * -1 < INT_MIN / 10)
+		if ((y > INT_MAX / 10 && !s) || (y * -1 < INT_MIN / 10 && s))
 			ft_ps_free(var, true);
-		else if ((y * 10) > INT_MAX - (str[*j] - '0') || \
-		(y * -10) < INT_MIN + (str[*j] - '0'))
+		else if (((y * 10) > INT_MAX - (str[*j] - '0') && !s) || \
+		((y * -10) < INT_MIN + (str[*j] - '0') && s))
 			ft_ps_free(var, true);
 		else
 			y = (y * 10) + (str[*j] - '0');
@@ -82,32 +88,30 @@ int	ft_ps_atoi(char *str, int *j, t_pile *var)
 	return (y);
 }
 
-int	ft_ps_len_av(int ac, char **av, int in, int count)
+static int	ft_ps_len_av(int ac, char **av, int count, t_index idx)
 {
-	int	i;
 	int	j;
 
-	i = 0;
-	while (i < ac)
+	while (idx.i < ac)
 	{
 		j = 0;
-		in  = 0;
-		while (av[i][j] != '\0')
+		idx.in = 0;
+		while (av[idx.i][j] != '\0')
 		{
-			if (!ft_ps_is_dss((int)av[i][j]) || (ft_ps_is_signe(av[i][j]) \
-			&& !ft_isdigit((int)av[i][j + 1])))
+			if (!ft_ps_is_dss((int)av[idx.i][j]) || (ft_ps_is_signe \
+			(av[idx.i][j]) && !ft_isdigit((int)av[idx.i][j + 1])))
 				ft_ps_error();
-			else if (av[i][j] <= '9' && av[i][j] >= '0')
+			else if (av[idx.i][j] <= '9' && av[idx.i][j] >= '0')
 			{
-				if (in == 0)
+				if (idx.in == 0)
 					count++;
-				in = 1;
+				idx.in = 1;
 			}
 			else
-				in = 0;
+				idx.in = 0;
 			j++;
 		}
-		i++;
+		idx.i++;
 	}
 	return (count);
 }
