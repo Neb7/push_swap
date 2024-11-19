@@ -61,7 +61,7 @@ ${NAME}:		${OBJS}
 				@echo "${BLUE}'libft.a' is compiling... 🔥 ${ITALIC}(if needed)${RESET}"
 				@make -sC ${LIBFT}
 				@${CC} ${CFLAGS} ${OBJS} -L${LIBFT} ${MAIN} -lft -o $@ 
-				@echo "${YELLOW}$@ is compiled ! ✅${RESET}"
+				@echo "${YELLOW}'$@' is compiled ! ✅${RESET}"
 
 ${OBJS_DIR}:
 				@mkdir -p ${OBJS_DIR}
