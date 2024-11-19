@@ -6,13 +6,11 @@
 /*   By: benpicar <benpicar@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:43:18 by benpicar          #+#    #+#             */
-/*   Updated: 2024/11/18 16:53:09 by benpicar         ###   ########.fr       */
+/*   Updated: 2024/11/19 18:45:22 by benpicar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
-#include "ft_printf.h"
 
 void	ft_sa(t_pile *var, bool w)
 {
@@ -60,7 +58,7 @@ void	ft_pa(t_pile *var, bool w)
 	var->len_a++;
 	var->a[0] = var->b[0];
 	i = -1;
-	while (++i < var->len_b)
+	while (++i < var->len_b - 1)
 		var->b[i] = var->b[i + 1];
 	var->len_b--;
 	var->max_a = ft_find_higher(var->a, var->len_a);
@@ -83,7 +81,7 @@ void	ft_pb(t_pile *var, bool w)
 	var->len_b++;
 	var->b[0] = var->a[0];
 	i = -1;
-	while (++i < var->len_a)
+	while (++i < var->len_a - 1)
 		var->a[i] = var->a[i + 1];
 	var->len_a--;
 	var->max_a = ft_find_higher(var->a, var->len_a);

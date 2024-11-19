@@ -6,13 +6,11 @@
 /*   By: benpicar <benpicar@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 14:21:33 by benpicar          #+#    #+#             */
-/*   Updated: 2024/11/18 18:48:55 by benpicar         ###   ########.fr       */
+/*   Updated: 2024/11/19 18:45:06 by benpicar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
-#include "ft_printf.h"
 
 static void	ft_ps_mix_move(t_calcul *bb, int i);
 

@@ -6,13 +6,11 @@
 /*   By: benpicar <benpicar@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:39:56 by benpicar          #+#    #+#             */
-/*   Updated: 2024/11/18 16:53:33 by benpicar         ###   ########.fr       */
+/*   Updated: 2024/11/19 18:45:09 by benpicar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
-#include "ft_printf.h"
 
 void	ft_ps_error(void)
 {

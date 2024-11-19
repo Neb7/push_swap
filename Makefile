@@ -68,7 +68,7 @@ clean:
 				@${RM} ${OBJS} ${OBJS_BONUS}
 				@${RM} -r ${OBJS_DIR}
 				@make clean -sC ${LIBFT}
-				@echo "${RED}'${NAME}' objects are deleted ! 👍${RESET}"
+				@echo "${RED}'${NAME}' and '${BONUS}' objects are deleted ! 👍${RESET}"
 
 fclean:			clean
 				@${RM} ${NAME} ${LIBFT}libft.a ${BONUS}

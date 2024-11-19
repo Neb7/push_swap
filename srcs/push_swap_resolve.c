@@ -6,13 +6,11 @@
 /*   By: benpicar <benpicar@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:25:34 by benpicar          #+#    #+#             */
-/*   Updated: 2024/11/18 17:13:19 by benpicar         ###   ########.fr       */
+/*   Updated: 2024/11/19 18:45:31 by benpicar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
-#include "ft_printf.h"
 
 static void	ft_ps_rotate_a(t_pile *var);
 static bool	ft_ps_check(int *tab, int size, int min);

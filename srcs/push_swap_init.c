@@ -6,13 +6,11 @@
 /*   By: benpicar <benpicar@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:39:24 by benpicar          #+#    #+#             */
-/*   Updated: 2024/11/18 17:03:30 by benpicar         ###   ########.fr       */
+/*   Updated: 2024/11/19 18:45:15 by benpicar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
-#include "ft_printf.h"
 
 static int	ft_ps_len_av(int ac, char **av, int count, t_index idx);
 

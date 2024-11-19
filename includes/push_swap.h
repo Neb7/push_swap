@@ -6,7 +6,7 @@
 /*   By: benpicar <benpicar@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:19:46 by benpicar          #+#    #+#             */
-/*   Updated: 2024/11/18 19:20:33 by benpicar         ###   ########.fr       */
+/*   Updated: 2024/11/19 18:46:12 by benpicar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # include <limits.h>
-# include <stdbool.h>
+# include "../libft/includes/libft.h"
 
 typedef struct s_pile
 {

@@ -6,13 +6,11 @@
 /*   By: benpicar <benpicar@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:47:32 by benpicar          #+#    #+#             */
-/*   Updated: 2024/11/18 18:55:44 by benpicar         ###   ########.fr       */
+/*   Updated: 2024/11/19 18:44:52 by benpicar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
-#include "ft_printf.h"
 
 static void	ft_read_0(t_pile *var);
 static void	ft_do_op(t_pile *var, char *next, char **op);
@@ -27,7 +25,7 @@ int	main(int ac, char **av)
 	{
 		ft_ps_alloc_var(&var, ac - 1, &av[1]);
 		ft_read_0(&var);
-		if (ft_is_sorted(&var))
+		if (ft_is_sorted(&var) && var.len_b == 0)
 			write(1, "OK\n", 3);
 		else
 			write(1, "KO\n", 3);

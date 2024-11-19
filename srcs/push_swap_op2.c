@@ -6,13 +6,11 @@
 /*   By: benpicar <benpicar@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:43:24 by benpicar          #+#    #+#             */
-/*   Updated: 2024/11/18 16:53:51 by benpicar         ###   ########.fr       */
+/*   Updated: 2024/11/19 18:45:26 by benpicar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
-#include "ft_printf.h"
 
 void	ft_ra(t_pile *var, bool w)
 {

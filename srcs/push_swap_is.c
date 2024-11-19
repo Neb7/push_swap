@@ -6,13 +6,11 @@
 /*   By: benpicar <benpicar@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:01:24 by benpicar          #+#    #+#             */
-/*   Updated: 2024/11/16 14:30:36 by benpicar         ###   ########.fr       */
+/*   Updated: 2024/11/19 18:45:18 by benpicar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
-#include "ft_printf.h"
 
 int	ft_ps_is_signe(int c)
 {

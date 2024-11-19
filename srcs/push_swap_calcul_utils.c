@@ -6,13 +6,11 @@
 /*   By: benpicar <benpicar@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 16:52:28 by benpicar          #+#    #+#             */
-/*   Updated: 2024/11/18 17:07:34 by benpicar         ###   ########.fr       */
+/*   Updated: 2024/11/19 18:45:01 by benpicar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
-#include "ft_printf.h"
 
 void	ft_set_min(t_calcul *aa, t_calcul *bb)
 {

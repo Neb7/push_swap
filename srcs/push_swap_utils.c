@@ -6,13 +6,11 @@
 /*   By: benpicar <benpicar@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:35:07 by benpicar          #+#    #+#             */
-/*   Updated: 2024/11/18 16:48:22 by benpicar         ###   ########.fr       */
+/*   Updated: 2024/11/19 18:45:38 by benpicar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
-#include "ft_printf.h"
 
 void	ft_put_higher_top(t_pile *var, bool *test)
 {
