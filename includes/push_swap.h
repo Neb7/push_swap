@@ -6,7 +6,7 @@
 /*   By: benpicar <benpicar@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:19:46 by benpicar          #+#    #+#             */
-/*   Updated: 2024/11/19 18:46:12 by benpicar         ###   ########.fr       */
+/*   Updated: 2024/12/07 15:36:13 by benpicar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ typedef struct s_calcul
 	int	mix_move;
 }	t_calcul;
 
-typedef struct s_index
+typedef struct s_index_ps
 {
 	int	i;
 	int	in;
-}	t_index;
+}	t_index_ps;
 
 /*push_swap_calcul*/
 

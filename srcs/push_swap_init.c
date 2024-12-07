@@ -6,17 +6,17 @@
 /*   By: benpicar <benpicar@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:39:24 by benpicar          #+#    #+#             */
-/*   Updated: 2024/11/19 18:45:15 by benpicar         ###   ########.fr       */
+/*   Updated: 2024/12/07 15:37:00 by benpicar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_ps_len_av(int ac, char **av, int count, t_index idx);
+static int	ft_ps_len_av(int ac, char **av, int count, t_index_ps idx);
 
 void	ft_ps_alloc_var(t_pile *var, int ac, char **av)
 {
-	t_index	idx;
+	t_index_ps	idx;
 
 	idx.i = 0;
 	idx.in = 0;
@@ -86,7 +86,7 @@ int	ft_ps_atoi(char *str, int *j, t_pile *var)
 	return (y);
 }
 
-static int	ft_ps_len_av(int ac, char **av, int count, t_index idx)
+static int	ft_ps_len_av(int ac, char **av, int count, t_index_ps idx)
 {
 	int	j;
 
