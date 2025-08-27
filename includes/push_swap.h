@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include <limits.h>
+# include <stdbool.h>
 # include "../libft/includes/libft.h"
 
 typedef struct s_pile
